@@ -29,6 +29,10 @@ func NewPlugin() *Plugin {
 	return gen
 }
 
+func (gen *Plugin) getFileReg() *protoregistry.Files {
+	return gen.fileReg
+}
+
 func (f *File) ResolveProtoFile(gen *Plugin, desc protoreflect.FileDescriptor) error {
 	for i, eds := 0, desc.Enums(); i < eds.Len(); i++ {
 		f.Enums = append(f.Enums, newEnum(gen, f, nil, eds.Get(i)))
