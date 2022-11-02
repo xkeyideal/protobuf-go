@@ -29,7 +29,7 @@ func NewPlugin() *Plugin {
 	return gen
 }
 
-func (gen *Plugin) getFileReg() *protoregistry.Files {
+func (gen *Plugin) GetFileReg() *protoregistry.Files {
 	return gen.fileReg
 }
 
